@@ -1,0 +1,89 @@
+{
+  "categories": [
+    {
+      "_id": "cat_mi1vx8hwms7jun",
+      "name": "iphones"
+    },
+    {
+      "_id": "cat_mi1vx8i6qidy0y",
+      "name": "samsung"
+    },
+    {
+      "_id": "cat_mi1vx8icf3cpbl",
+      "name": "ipads"
+    },
+    {
+      "_id": "cat_mi1vx8iisuvqrf",
+      "name": "smartwatch"
+    },
+    {
+      "_id": "cat_mi1vx8iqbsb9ro",
+      "name": "gaming"
+    },
+    {
+      "_id": "cat_mi1vx8iwa658mf",
+      "name": "laptops"
+    },
+    {
+      "_id": "cat_mi1wz0vgf2l30o",
+      "name": "testing",
+      "imageUrl": "/uploads/1763309539910-557374734.jpg"
+    }
+  ],
+  "products": [
+    {
+      "_id": "prod_mi1vx8hzrse7x9",
+      "categoryId": "cat_mi1vx8hwms7jun",
+      "title": "iPhone 15",
+      "description": "",
+      "price": 999,
+      "imageUrl": "images/iphone2.png",
+      "createdAt": "2025-11-16T15:42:57.095Z"
+    },
+    {
+      "_id": "prod_mi1vx8i9nlwqwt",
+      "categoryId": "cat_mi1vx8i6qidy0y",
+      "title": "Galaxy S23",
+      "description": "",
+      "price": 899,
+      "imageUrl": "images/samsung.png",
+      "createdAt": "2025-11-16T15:42:57.105Z"
+    },
+    {
+      "_id": "prod_mi1vx8ifcl390f",
+      "categoryId": "cat_mi1vx8icf3cpbl",
+      "title": "iPad Pro",
+      "description": "",
+      "price": 1099,
+      "imageUrl": "images/ipad.png",
+      "createdAt": "2025-11-16T15:42:57.111Z"
+    },
+    {
+      "_id": "prod_mi1vx8im6iidc3",
+      "categoryId": "cat_mi1vx8iisuvqrf",
+      "title": "Apple Watch Series 9",
+      "description": "",
+      "price": 399,
+      "imageUrl": "images/smartwatch.png",
+      "createdAt": "2025-11-16T15:42:57.118Z"
+    },
+    {
+      "_id": "prod_mi1vx8it1y2uxa",
+      "categoryId": "cat_mi1vx8iqbsb9ro",
+      "title": "PS5",
+      "description": "",
+      "price": 499,
+      "imageUrl": "images/console-2-preview.png",
+      "createdAt": "2025-11-16T15:42:57.125Z"
+    },
+    {
+      "_id": "prod_mi1vx8iyvjspr9",
+      "categoryId": "cat_mi1vx8iwa658mf",
+      "title": "MacBook Pro",
+      "description": "",
+      "price": 1299,
+      "imageUrl": "images/macbook.jpeg",
+      "createdAt": "2025-11-16T15:42:57.130Z"
+    }
+  ]
+}
