@@ -3,11 +3,11 @@ const express = require('express');
 const cors = require('cors');
 const path = require('path');
 
-const connectDB = require('server/config/db');
-const categoryRoutes = require('server/routes/categories');
-const productRoutes = require('server/routes/products');
-const aiRoutes = require('server/routes/ai');
-const { seedFromImages } = require('server/data/seed');
+const connectDB = require('./config/db');
+const categoryRoutes = require('./routes/categories');
+const productRoutes = require('./routes/products');
+const aiRoutes = require('./routes/ai');
+const { seedFromImages } = require('./data/seed');
 
 const app = express();
 
