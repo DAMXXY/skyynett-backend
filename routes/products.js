@@ -1,6 +1,8 @@
 const express = require('express');
+const fs = require('fs');
 const store = require('../data/store');
 const upload = require('../middleware/upload_clean');
+const cloudinary = require('../config/cloudinary');
 const router = express.Router();
 
 // GET all products
@@ -24,14 +26,27 @@ router.get('/category/:categoryId', (req, res) => {
 });
 
 // POST new product (accept optional file upload)
-router.post('/', upload.single('image'), (req, res) => {
+router.post('/', upload.single('image'), async (req, res) => {
   try {
     const { categoryId, title, description, price } = req.body;
     let imageUrl = req.body.imageUrl;
+
     if (req.file) {
-      imageUrl = `/uploads/${req.file.filename}`;
+      // Upload to Cloudinary and remove the local file
+      const result = await cloudinary.uploader.upload(req.file.path, { folder: 'products' });
+      imageUrl = result.secure_url;
+      fs.unlink(req.file.path, (err) => {
+        if (err) console.warn('Failed to remove temp product upload:', err.message);
+      });
     }
-    const product = store.createProduct({ categoryId, title, description, price: parseFloat(price), imageUrl });
+
+    const product = store.createProduct({
+      categoryId,
+      title,
+      description,
+      price: parseFloat(price),
+      imageUrl
+    });
     res.status(201).json(product);
   } catch (err) {
     res.status(500).json({ error: err.message });
