@@ -57,7 +57,11 @@ router.post('/', upload.single('image'), async (req, res) => {
 router.delete('/:id', (req, res) => {
   try {
     const ok = store.deleteProduct(req.params.id);
-    if (!ok) return res.status(404).json({ message: 'Product not found' });
+    if (!ok) {
+      // Helpful debug info when deletion fails on deployed server
+      const existing = store.getAllProducts().map(p => p._id);
+      return res.status(404).json({ message: 'Product not found', existingIds: existing });
+    }
     res.json({ message: 'Product deleted' });
   } catch (err) {
     res.status(500).json({ error: err.message });
